@@ -1,8 +1,8 @@
 # @summary
 #   This module allows to auto-renew Puppet Agent certificates
 class agent_certificate::auto_renew (
-  Optional[Integer] $expiration = undef,
-  Boolean $dry_mode = false
+  $expiration = undef,
+  $dry_mode   = false
 ){
   if $::agent_certificate_expires {
     if $::clientnoop or $dry_mode {
