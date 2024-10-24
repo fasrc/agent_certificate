@@ -1,5 +1,5 @@
 Facter.add(:agent_certificate_csr) do
-  confine agent_certificate_expires: true
+  confine :agent_certificate_expires => true
   setcode do
     cert_name = Puppet.settings[:certname]
     key_file = "#{Puppet.settings[:privatekeydir]}/#{cert_name}.pem"
